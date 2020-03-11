@@ -13,11 +13,6 @@ merged by upstream will be removed from this section.
   * fix for crash (double free) when libnl3-devel (for HT channel support) is not installed (fedora)
   * Branch bugfix-segv-when-no-libnl3-devel-installed
 
-* PR 2095 (https://github.com/aircrack-ng/aircrack-ng/pull/2095)
-  * fix src/Makefile.inc to get `--enable-static --disable-shared` and 
-optionally `--with-static-simd=xxx` to build successfully      
-  * Branch fix-for-static-linking
-
 * PR 2102 (https://github.com/aircrack-ng/aircrack-ng/pull/2102)
   * bugfix: fix memory references in dump_print() after main thread has free() the memory
   * Branch fix-for-coredump-for-use-after-free4
