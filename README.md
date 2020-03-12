@@ -1,3 +1,65 @@
+# Changes from upstream
+
+This section of the README documents the changes between this 
+repository (https://github.com/dmfreemon/aircrack-ng) and the 
+upstream repository at https://github.com/aircrack-ng/aircrack-ng.
+
+PRs have been submitted to upstream to these.  Any PRs that are 
+merged by upstream will be removed from this section.
+
+## Pull Requests
+
+* PR 2094 (https://github.com/aircrack-ng/aircrack-ng/pull/2094)
+  * fix for crash (double free) when libnl3-devel (for HT channel support) is not installed (fedora)
+  * Branch bugfix-segv-when-no-libnl3-devel-installed
+
+* PR 2102 (https://github.com/aircrack-ng/aircrack-ng/pull/2102)
+  * bugfix: fix memory references in dump_print() after main thread has free() the memory
+  * Branch fix-for-coredump-for-use-after-free4
+
+* PR 2105 (https://github.com/aircrack-ng/aircrack-ng/pull/2105)
+  * Improve some string handling that could lead to SEGVs; also eliminate the FORTIFY_SOURCE warnings
+  * Branch cleanup-fortify-warnings5
+
+* PR 2127 (https://github.com/aircrack-ng/aircrack-ng/pull/2127)
+  * Remove support for building aircrack libraries as dynamic shared objects      
+  * Branch remove-support-for-building-shared-libraries3
+  * Also see Issue 2096 (https://github.com/aircrack-ng/aircrack-ng/issues/2096) Use of dynamic shared objects
+  * Note that the same effect can be achieved  with the '--enable-static 
+--disable-shared' options of ./configure.  The downside of that is that you 
+have to remember to always use those options.
+
+The PRs are on https://github.com/aircrack-ng/aircrack-ng
+
+The branches are on https://github.com/dmfreemon/aircrack-ng
+
+## Cheatsheet
+
+```autoreconf -i```
+
+To compile, I always use:
+
+```CFLAGS='-g -O0' CXXFLAGS='-g -O0' CPPFLAGS='-D_FORTIFY_SOURCE=0' ./configure```
+
+* These options are just for debugging of course.  Normally, none of those options are needed.
+
+If you're not using PR 2127, use this:
+
+```CFLAGS='-g -O0' CXXFLAGS='-g -O0' ./configure --enable-static --disable-shared```  
+
+```make```
+
+To run (from the build directory):
+
+```sudo ./airodump-ng <interfacename> ...```
+
+If you do not have PR 2127, or did not use options 
+`--enable-static --disable-shared` with `./configure`, then the command
+to run from the build directory is:
+
+```LD_LIBRARY_PATH=.libs sudo ./airodump-ng <interfacename> ...```
+
+
 # Aircrack-ng
 
 [![Linux/Mac Build Status](https://travis-ci.org/aircrack-ng/aircrack-ng.svg?branch=master)](https://travis-ci.org/aircrack-ng/aircrack-ng)
