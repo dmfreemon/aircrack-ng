@@ -21,14 +21,6 @@ merged by upstream will be removed from this section.
   * Improve some string handling that could lead to SEGVs; also eliminate the FORTIFY_SOURCE warnings
   * Branch cleanup-fortify-warnings5
 
-* PR 2127 (https://github.com/aircrack-ng/aircrack-ng/pull/2127)
-  * Remove support for building aircrack libraries as dynamic shared objects      
-  * Branch remove-support-for-building-shared-libraries3
-  * Also see Issue 2096 (https://github.com/aircrack-ng/aircrack-ng/issues/2096) Use of dynamic shared objects
-  * Note that the same effect can be achieved  with the '--enable-static 
---disable-shared' options of ./configure.  The downside of that is that you 
-have to remember to always use those options.
-
 The PRs are on https://github.com/aircrack-ng/aircrack-ng
 
 The branches are on https://github.com/dmfreemon/aircrack-ng
