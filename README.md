@@ -25,6 +25,12 @@ The PRs are on https://github.com/aircrack-ng/aircrack-ng
 
 The branches are on https://github.com/dmfreemon/aircrack-ng
 
+## Ideas / TODO maybe
+
+* Add new command line argument that sets a time limit on how long to run -- to avoid threading bugs when the thread is killed
+
+* Fix Issue #2121 -- "EXIT" is incorrectly sent to stdout
+
 ## Cheatsheet
 
 ```autoreconf -i```
